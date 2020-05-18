@@ -24,7 +24,7 @@ public class BaseClass {
 	public BaseClass(){
 		try{
 			prop = new Properties();
-					FileInputStream ip = new FileInputStream("C:/Users/nootan.singh/workspace/FlipkartEcommerceV1/Configuration/config.properties");
+					FileInputStream ip = new FileInputStream("/Users/262107/Downloads/TestAutomationFramework-master/FlipkartEcommerceV1/Configuration/config.properties");
 		prop.load(ip);
 		}
 		catch(FileNotFoundException e)
@@ -41,7 +41,7 @@ public class BaseClass {
 	{
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(srcFile,new File("C:/Users/nootan.singh/workspace/FlipkartEcommerceV1/Screenshots"));
+			FileUtils.copyFile(srcFile,new File("/Users/262107/Downloads/TestAutomationFramework-master/FlipkartEcommerceV1/Screenshots"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class BaseClass {
 	{
 		String browserName = prop.getProperty("browser");
 		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver","C:/Users/nootan.singh/workspace/FlipkartEcommerceV1/Drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","/Users/262107/Downloads/TestAutomationFramework-master/FlipkartEcommerceV1/Drivers/chromedriver");
 			WebDriver driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
@@ -65,7 +65,7 @@ public class BaseClass {
 		}
 		else
 			if(browserName.equals("FF")){
-				System.setProperty("webdriver.gecko.driver","C:/Users/nootan.singh/workspace/FlipkartEcommerceV1/Drivers/geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver","/Users/262107/Downloads/TestAutomationFramework-master/FlipkartEcommerceV1/Drivers/geckodriver.exe");
 				WebDriver driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
